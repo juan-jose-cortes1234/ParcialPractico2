@@ -38,8 +38,9 @@
         <hr class="hr">
         <div class="row">
           <h2>Ingredientes</h2>
+          <p><strong>Ingrediente más usado :  </strong> {{ingredienteMasUsado}}</p>
           <ul class="list-group px-4">
-            <li class="list-item" *ngFor="let i of recipe.ingredientes">{{i.nombre}}</li>
+            <li class="list-item" *ngFor="let i of recipe.ingredientes">{{i.nombre}} - {{i.cantidad}} {{i.unidad}}</li>
             
           </ul>
 

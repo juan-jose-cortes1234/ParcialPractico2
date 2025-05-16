@@ -19,4 +19,6 @@ public getRecipes() : Observable<Recipe[]>{
 public getRecipe(id : number) : Observable<Recipe>{
   return this.http.get<Recipe>('https://raw.githubusercontent.com/2603-Uniandes/jsons/refs/heads/main/2025-10%20Recetas/'+id+'/recipe.json')
 }
+
+
 }

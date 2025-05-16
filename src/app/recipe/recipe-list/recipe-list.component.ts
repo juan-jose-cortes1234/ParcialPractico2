@@ -30,4 +30,10 @@ export class RecipeListComponent implements OnInit {
     this.router.navigate(["/recipes",recipe.id])
 
   }
+
+  public cantidadIngredientes(recipe : Recipe) : number
+  {
+    return recipe.ingredientes.length;
+  }
+
 }

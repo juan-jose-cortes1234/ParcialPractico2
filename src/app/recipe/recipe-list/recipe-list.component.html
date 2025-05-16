@@ -41,6 +41,7 @@
             <h5 class="card-title">{{ r.nombre}}</h5>
             <p class="card-text">{{ r.pasos }}</p>
             <p class="card-text"><strong>Porciones : </strong> {{ r.porciones}}</p>
+            <p class="card-text"><strong>#ingredientes : </strong> {{ cantidadIngredientes(r) }}</p>
             <button class="btn btn-primary" (click)="onSelect(r)" type="button" title = "verMás">Ver la receta</button>
           </div>
 
