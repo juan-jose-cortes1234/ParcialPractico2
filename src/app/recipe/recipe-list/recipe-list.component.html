@@ -1,9 +1,10 @@
-<div>
-  <div>
-    <div *ngIf="selected">
+
+  <div class = "container pt-4">
+    <!-- <div *ngIf="selected">
       <app-recipe-detail [recipe]="selectedRecipe"></app-recipe-detail>
-    </div>
-    <table>
+    </div> -->
+
+    <!-- <table>
       <thead>
         <tr>
           <th>Receta</th>
@@ -26,6 +27,26 @@
           <td>{{ recipe.tiempo_minutos }} min</td>
         </tr>
       </tbody>
-    </table>
+    </table> -->
+    <div class="row d-flex justify-content-center align-items-stretch">
+      <div class="col-md-3 d-flex px-4 pb-2 pt-2" *ngFor="let r of recipes">
+        <div class="card d-flex">
+          <div class="card-body">
+            <div class="row">
+              <img
+              [src]="r.imagen"
+              alt="Imagen de la receta"
+              class="img-thumbnail"
+            />
+            <h5 class="card-title">{{ r.nombre}}</h5>
+            <p class="card-text">{{ r.pasos }}</p>
+            <p class="card-text"><strong>Porciones : </strong> {{ r.porciones}}</p>
+            <button class="btn btn-primary" (click)="onSelect(r)" type="button" title = "verMás">Ver la receta</button>
+          </div>
+
+           
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+

@@ -1,21 +1,78 @@
-<div class="recipe-detail">
-  <h2>{{ recipe.nombre }}</h2>
-  <img
-    class="recipe-detail-img"
-    [src]="recipe.imagen"
-    alt="{{ recipe.imagen }}"
-  />
-  <p><strong>Porciones:</strong> {{ recipe.porciones }}</p>
-  <p><strong>Tiempo:</strong> {{ recipe.tiempo_minutos }} min</p>
-  <h3>Ingredientes</h3>
-  <app-ingredient-list
-    [ingredients]="recipe.ingredientes"
-  ></app-ingredient-list>
+<div class="container pt-4 px-4 p-4">
+  <div class="card pb-4 px-4 pt-4">
+    <div class="row px-4">
+      <div class="col-4">
+        <div class="row">
+          <h2>{{ recipe.nombre! }}</h2>
+        </div>
+        <div class="row">
+          <img
+            class="recipe-detail-img"
+            [src]="recipe.imagen"
+            alt="{{ recipe.imagen }}"
+          />
+        </div>
+        <div class="row d-flex justify-content-center pt-4 ">
+          <button class="btn btn-primary" type="button" title="volver" (click)="volver()"> Regresar </button>
+        </div>
+      </div>
+      <div class="col-8 ">
+        <div class="row">
+          <div class="col ">
+              <div class="row pb-2">
+                <p><strong>Porciones : </strong> {{recipe.porciones}}</p>
+              </div>
+              <div class="row">
+                <p><strong>Dificultad : </strong> {{recipe.dificultad}}</p>
+              </div>
+          </div>
+          <div class="col">
+            <div class="row pb-2">
+              <p><strong>Tiempo : </strong> {{recipe.tiempo_minutos}} min</p>
+            </div>
+            <div class="row">
+              <p><strong>Tipo : </strong> {{recipe.tipo}}</p>
+            </div>
+          </div>
+        </div>
+        <hr class="hr">
+        <div class="row">
+          <h2>Ingredientes</h2>
+          <ul class="list-group px-4">
+            <li class="list-item" *ngFor="let i of recipe.ingredientes">{{i.nombre}}</li>
+            
+          </ul>
 
-  <h3>Pasos</h3>
-  <ol>
-    <li *ngFor="let step of recipe.pasos">
-      {{ step }}
-    </li>
-  </ol>
+        </div>
+        <hr class="hr">
+        <div class="row">
+          <h2>Pasos</h2>
+          <ol class="list-group px-4">
+            <li class="list-number" *ngFor="let p of recipe.pasos">{{p}}</li>
+            
+          </ol>
+
+        </div>
+      </div>
+    </div>
+    <!-- <h2>{{ recipe.nombre! }}</h2>
+    <img
+      class="recipe-detail-img"
+      [src]="recipe.imagen"
+      alt="{{ recipe.imagen }}"
+    />
+    <p><strong>Porciones:</strong> {{ recipe.porciones }}</p>
+    <p><strong>Tiempo:</strong> {{ recipe.tiempo_minutos }} min</p>
+    <h3>Ingredientes</h3>
+    <app-ingredient-list
+      [ingredients]="recipe.ingredientes"
+    ></app-ingredient-list>
+
+    <h3>Pasos</h3>
+    <ol>
+      <li *ngFor="let step of recipe.pasos">
+        {{ step }}
+      </li>
+    </ol> -->
+  </div>
 </div>

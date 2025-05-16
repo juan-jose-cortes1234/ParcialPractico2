@@ -10,3 +10,8 @@ tr:hover {
 thead {
   background-color: palevioletred;
 }
+
+.card {
+  background-color: white;
+
+}
